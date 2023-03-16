@@ -1,0 +1,28 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.common-form{
+text-align: center;
+display: flex;
+margin: auto;
+flex-direction: column;
+width: 300px;
+}
+.form-input{
+height: 35px;
+margin-bottom: 20px;
+padding-left: 10px;
+border: 1px solid magenta;
+color: magenta;
+}
+.form-button{
+    height: 35px;
+    border: 1px solid magenta;
+    cursor: pointer;
+    /* font-size: 40px; */
+}
+.searc-icon{
+    position: absolute;
+    z-index: 10;
+    right: 50%;
+    top: 20px;
+    color: blue;
+}

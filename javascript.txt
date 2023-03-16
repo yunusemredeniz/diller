@@ -1,0 +1,41 @@
+let ad="yunus"
+number
+console.log(32%2) çift
+console.log(2**4) us
+Math.floor(1.9)yukarı
+Math.ceil(1.9)aşağı
+Math.round(1.5)2
+let number1="11px"
+number1=parseInt(number1)
+console.log("number:"number1,typeof(number1))
+let number2=11
+number1= tostring(number2)
+console.log("number:"number2,typeof(number2))
+`${new Date().getHours()}`
+ad.length()
+ad=ad.toUpperCase()
+SubString()
+==eşitse === hem değeri hem türü !=eşit değilse && || ! değil tersi
+koşul?doğruysa:yalnışsa
+function findx(t,v){
+    let yol=t*y;
+    return yol;
+}
+let hesap=findx(4,50);
+console.log(hesap);
+var isim=["yunus","emre"]
+isim.push("elif");ekleme
+break kesme continue atla
+var i=0;
+var images=["adres","adres"];
+var duration=2000;
+function slideimg(){
+    document.slide.src=images[i];
+    if(i<images.length-1){
+        i++;
+    }else{
+        i=0;
+    }
+    setTimeout("slideimg()"duration);
+}
+window.onload=slideimg;

@@ -1,0 +1,9 @@
+.example-container {
+    width: 98%;
+    height: 320pt;
+    margin: 10px;
+    border: 1px solid #555;
+}
+.admin-left{
+  width: 150px;
+}  

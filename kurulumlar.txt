@@ -1,0 +1,20 @@
+npm install -g @angular/cli
+ng help   ng new    ng serve    ng build    ng code.    ng serve --port 4200
+ng g c home   ng g cl contracts/product   tsconfig "strict": false,
+ng g d direktif/silme
+direktif anamodule declare yapılır
+//rfc
+npm i axios    
+ng add @angular/material    npm i bootstrap   npm i jquery
+npm install alertifyjs --save   npm install ngx-toastr --save   npm install ngx-spinner --save
+npm install @angular/animations --save
+npm install ngx-file-drop --save
+npm install angular-paginator --save
+npm i ng2-search-filter --save
+npm install  ng2-order-pipe --save
+npm i ngx-pagination
+npm init --yes
+  npm i file-saver  
+npm i @types/file-saver  
+npm i -g json-server
+json-server --watch db.json

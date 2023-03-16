@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-2">
+<form [formGroup]="productform" class="yerlestir">
+  
+  
+<mat-form-field appearance="fill" class="product-create">
+  <mat-label>Name</mat-label>
+  <input formControlName="name" matInput #txtName>
+</mat-form-field>
+<mat-form-field appearance="fill" class="product-create">
+  <mat-label>Stock</mat-label>
+  <input formControlName="stock" matInput type="number" min="0" value="0" #txtStock>
+</mat-form-field>
+<mat-form-field appearance="fill" class="product-create">
+  <mat-label>Price</mat-label>
+  <input formControlName="price" matInput type="number" min="0" value="0" #txtPrice>
+</mat-form-field>
+
+<button mat-raised-button class="btn" color="primary" (click)="postdbproduct()">Ekle</button>
+</form>
+  </div>
+  <div class="col-md-1>">
+<app-b [options]="fileuploadoptions"></app-b>
+  </div>
+</div>
+<!-- <div class="row mt-5">yunus</div> -->
+<!-- <app-dosyayukle [options]="fileuploadoptions"></app-dosyayukle> -->
+<!-- {{title}} text -->
+<!-- <input text="text" [value]="title"> property -->
+<!-- <button (click)="btnclick()">click</button>event -->
+<!-- <div *ngFor="let name of title">{{name}}</div> -->
+<!-- <div *ngIf="false">merhaba</div> -->

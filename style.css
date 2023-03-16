@@ -1,0 +1,173 @@
+
+.header{
+    background-image: url(coffee.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 100;
+    line-height: 0.4;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    content: "Buy";
+    position: absolute;
+    transition: .5s;
+    text-align: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    object-fit: cover;
+    transform: scale(1.1 );
+    justify-content: space-evenly;
+}
+    
+.contact-item{
+    display: flex;
+    align-items: center;
+    flex-basis: 33%;
+    margin-bottom: 100px;
+    flex-direction: column;
+}
+.contact-item i{
+font-size: 25px;
+margin-bottom: 30px;
+color: magenta;
+}
+.contact-item p{
+    font-size: 14px;
+    line-height: 11px;
+}
+.footer h2{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: magenta;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 55px 0;
+}
+.footer h2::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: magenta;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+   
+}
+.footer{
+    background-color: blue;
+    
+    
+    display: flex;
+  
+}
+.footer-copyright{
+    color: magenta;
+    text-align: center;
+    flex-basis: 55%;
+    line-height: 2;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer-social{
+    color: blue;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 0 25px;
+}
+.footer-social:first-child{
+    margin-left: 70px;
+}
+#menu-ikon{
+    font-size: 25px;
+    display: none;
+    margin-left: 20px;
+}
+@media only screen and(max-width:800px) {
+    .header-menu ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: blue;
+        width: 100%;
+        overflow: hidden;
+        transition: maxheight .5s;
+    }
+    .header-menu ul li{
+        margin-right: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .header-menu ul li a{
+        color: magenta;
+    }
+    .header-menu #menu-ikon{
+display: block;
+cursor: pointer;
+    }
+}
+@media only screen and(max-width:800px){
+    .about-img{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .about-text{
+        width: 100%;
+    }
+}
+@media only screen and(max-width:800px){
+.portfollo .portfollo-item{
+    flex-basis: 50%;
+}
+
+}
+@media only screen and(max-width:500px){
+    .portfollo .portfollo-item{
+        flex-basis: 100%;
+    }
+}
+@media only screen and(max-width:800px){
+    .contact-content{
+        flex-direction: column;
+    }
+    .contact-item{
+        margin-top: 30px;
+    }
+    .contact-item p{
+        width: 100%;
+        text-align: center;
+    }
+}
+<script>
+      var menuitems=document.getElementById('menuitems');
+      menuitems.style.maxHeight='0px';
+      function menutoggle(){
+        if  (menuitems.style.maxHeight=="0px"){
+          menuitems.style.maxHeight="200px";
+        }
+        else{
+          menuitems.style.maxHeight="0px";
+        }
+      } 
+    </script>

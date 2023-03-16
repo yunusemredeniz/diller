@@ -1,0 +1,33 @@
+
+<table class="table text-center">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th (click)="sort2('name')">name&nbsp;<i class="fa fa-sort"></i></th>
+      <th>price</th>
+      <th>stock</th>
+      <th>sil</th>
+    </tr>
+  </thead>
+  
+    <tr
+      *ngFor="
+        let row of dbproductmodel
+          | orderBy: key:reverse
+          | paginate: { itemsPerPage: 5, currentPage: p }
+      "
+    >
+      <td>{{ row.id }}</td>
+      <td>{{ row.name }}</td>
+      <td>{{ row.price }}</td>
+      <td>{{ row.stock }}</td>
+      <td appDirektif 
+      [id]="row.id"
+      (callback)="getalldbproduct()"
+      controller="productlist" ><!-- <img src="../../../../../assets/delete.png" width="45" height="45" (click)="delete(row.id,$event)"   alt=""> --></td>
+    </tr>
+  
+ 
+</table>
+  
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>

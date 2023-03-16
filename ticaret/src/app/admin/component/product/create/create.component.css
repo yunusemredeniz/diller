@@ -1,0 +1,18 @@
+
+.product-create{
+    margin: 5px 5px 5px;
+    width: 100px;
+}  
+.btn{
+    margin: 5px 5px 5px;   
+    width: 100px;
+    height: 50px;
+}
+.yerlestir{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 120px;
+    height: 300px;
+    float: left;
+}

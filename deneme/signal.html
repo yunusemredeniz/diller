@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <script src="signalr.min.js"></script>
+ <script src="jquery.min.js"></script>
+ <script >
+     $(document).ready(()=>{
+      // serverTimeout: 100 
+         const connection = new signalR.HubConnectionBuilder()
+         .withUrl("https://localhost:5001/Denemehub")
+         .withAutomaticReconnect([1000,1000,2000,5000,10000,15000])
+         .build();
+         
+connection.serverTimeoutInMilliseconds = 100000; // 100 second
+async function start(){
+    try {await connection.start();
+
+    }catch(error){setTimeout(()=>start(),2000);
+
+    }
+}
+start();
+function animation(){
+    durum.fadeIn(2000,()=>{
+        setTimeout(()=>{
+            durum.fadeOut(2000);
+        },2000)
+    });
+}
+const durum=$("#durum");
+connection.onreconnecting(error=>{
+    durum.css("background-color","blue");
+    durum.css("color","white");
+    durum.html("bağlantı  kuruluyor....");
+    animation();
+});
+connection.onreconnected(connectionId=>{
+    durum.css("background-color","green");
+    durum.css("color","white");
+    durum.html("bağlantı  kuruldu....");
+    animation();
+});
+connection.onclose(connectionId=>{
+    durum.css("background-color","red");
+    durum.css("color","white");
+    durum.html("bağlantı  kurulamadı....");
+    animation();
+});
+connection.on("userjoined",connectionId=>{
+    durum.html(`${connectionId} bağlandı`);
+    durum.css("background-color","red");
+    animation();
+});
+connection.on("userleaved",connectionId=>{
+    durum.html(`${connectionId} ayrıldı`);
+    durum.css("background-color","blue");
+    animation();
+})
+connection.on("clients",clientdata=>{
+    let text="";
+    $.each(clientdata,(index,item) => {
+        text+=`<li>${item}</li>`;
+    });
+        $("#clients").html(text);
+    });
+
+         $("#btngonder").click(()=>{
+             let message=$("#txtmessage").val();
+             connection.invoke("Sendmessageasyc",message).catch(error=>console.log(`mesaj gönderirken hata oluştu ${error}`));
+         });
+         connection.on("receivemessage",message=>{
+             $("#mesajlar").append(message + "<br>");
+         })    
+        });
+     
+ </script>
+</head>
+<body>
+    <div id="durum" style="display: none;"></div>
+ <input type="text" id="txtmessage">
+ <button id="btngonder">gönder</button>   
+ <div id="mesajlar"></div>
+ <div>
+     <ul id="clients"></ul>
+ </div>
+</body>
+</html>
